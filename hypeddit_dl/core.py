@@ -27,8 +27,21 @@ def load_env():
                 for line in f:
                     if "=" in line and not line.strip().startswith("#"):
                         k, v = line.strip().split("=", 1)
-                        if k.strip() not in os.environ:
-                            os.environ[k.strip()] = v.strip()
+def ensure_chromium_installed():
+    """Checks if Chromium binary is installed, auto-installs if missing."""
+    try:
+        from playwright.sync_api import sync_playwright
+        with sync_playwright() as p:
+            exec_path = p.chromium.executable_path
+            if not os.path.exists(exec_path):
+                raise FileNotFoundError()
+    except Exception:
+        import subprocess
+        print("[*] Chromium binary not found. Auto-installing Chromium via Playwright...", flush=True)
+        try:
+            subprocess.run([sys.executable, "-m", "playwright", "install", "chromium"], check=True)
+        except Exception as err:
+            print(f"[!] Auto-install note: {err}. Please run 'playwright install chromium' manually.", flush=True)
 
 async def download_track(
     url: str,
@@ -44,6 +57,7 @@ async def download_track(
     Automates the download of a track from a Hypeddit fangate URL.
     """
     load_env()
+    ensure_chromium_installed()
     dest_path = Path(dest_dir).expanduser().resolve()
     dest_path.mkdir(parents=True, exist_ok=True)
     profile_path = Path(user_data_dir).expanduser().resolve()
