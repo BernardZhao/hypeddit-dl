@@ -1,5 +1,6 @@
 # 🎵 hypeddit-dl
 
+[![PyPI](https://img.shields.io/pypi/v/hypeddit-dl.svg)](https://pypi.org/project/hypeddit-dl/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Python 3.8+](https://img.shields.io/badge/Python-3.8%2B-brightgreen.svg)](https://python.org)
 [![Playwright](https://img.shields.io/badge/Automated%20With-Playwright-orange.svg)](https://playwright.dev)
@@ -15,13 +16,11 @@ It seems like Hypeddit no longer can perform actions on behalf of your Soundclou
 
 ## 🚀 Installation
 
-### Install from GitHub
 ```bash
-git clone https://github.com/BernardZhao/hypeddit-dl.git
-cd hypeddit-dl
-pip install -e .
-playwright install chromium
+pip install hypeddit-dl
 ```
+
+> *Note: Chromium is auto-installed by the package on first run, or you can run `playwright install chromium` manually.*
 
 ---
 
