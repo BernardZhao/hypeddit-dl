@@ -23,8 +23,8 @@ classifiers = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/nymori/hypeddit-dl"
-Repository = "https://github.com/nymori/hypeddit-dl"
+Homepage = "https://github.com/BernardZhao/hypeddit-dl"
+Repository = "https://github.com/BernardZhao/hypeddit-dl"
 
 [project.scripts]
 hypeddit-dl = "hypeddit_dl.cli:main"

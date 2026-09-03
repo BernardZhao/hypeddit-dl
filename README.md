@@ -28,7 +28,7 @@ Hypeddit is widely used by DJs and electronic music producers to distribute free
 
 ### Option 1: Install from GitHub
 ```bash
-git clone https://github.com/nymori/hypeddit-dl.git
+git clone https://github.com/BernardZhao/hypeddit-dl.git
 cd hypeddit-dl
 pip install -e .
 playwright install chromium
