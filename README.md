@@ -6,10 +6,10 @@
 
 A CLI downloader and Python library for **Hypeddit** music download links.
 
-Works for Soundcloud gates as of Septemeber 2026.
+Works for Soundcloud gates as of September 2026.
 It seems like Hypeddit no longer can perform actions on behalf of your Soundcloud account, so we just need to automate clicking through.
 
-Was originally made with agent help for quick scripting.
+*Was originally made with agent help for quick personal scripting.*
 
 ---
 
